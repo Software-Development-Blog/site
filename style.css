@@ -1,0 +1,20 @@
+body {
+	background-color: rgb(33, 37, 41, .6);
+}
+
+.container-params {
+	margin-top: 7rem;
+	width: 75%;
+}
+
+.header-params {
+	margin-bottom: 3rem;
+}
+
+.text-params {
+	width: 80%;
+}
+
+.answer-params {
+	margin-bottom: 3rem;
+}

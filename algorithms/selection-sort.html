@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Software Development Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Software Development Blog</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Technical Interview</a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../index.html">Java</a></li>
+                            <li><a class="dropdown-item" href="../interview/spring.html">Spring</a></li>
+                            <li><a class="dropdown-item" href="../interview/sql.html">SQL</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Algorithms</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./insertion-sort.html">Insertion Sort</a></li>
+                            <li><a class="dropdown-item" href="./selection-sort.html">Selection Sort</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Data Structures</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../data-structures/linked-list.html">Linked List</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Examples</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../examples/spotless.html">Spotless Plugin</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container container-params">
+        <h2 class="header-params">Selection Sort Algorithm</h2>
+
+        <div class="text-params">
+            <p>
+                Selection sort is a sorting algorithm with a complexity of O(n^2).
+                <br><br>
+                Idea of the algorithm is that we take a given array, select its minimum element and place it in the
+                first position. So the most left subarray with one element (which we found as a minimum one) is already
+                sorted. Next we take a given array from its next (second) element to the end, find a minimum element,
+                and place it on the second position. So now we have a subarray of two elements which are sorted. We
+                continue in a similar manner until all elements are sorted.
+                <br><br>
+                Let’s see how it works.
+                <br><br>
+                5, 4, 3, 2, 1.
+                <br><br>
+                1 is a minimum element and we place it on the first position instead of the value of 5 (and value of 5
+                is now placed on the place of value 1).
+                <br><br>
+                [1], 4, 3, 2, 5.
+                <br><br>
+                So subarray [1] is already sorted.
+                <br><br>
+                Next minimum element is a value of 2. So we place it on a second position instead of the value of 4, and
+                the value of 4 (second position) is placed on the place of value 2.
+                <br><br>
+                [1, 2], 3, 4, 5.
+                <br><br>
+                Next minimum element is a value of 3. There is no need to replace it with other elements.
+                <br><br>
+                [1, 2, 3], 4, 5.
+                <br><br>
+                Similarly [1, 2, 3, 4], 5.
+                <br><br>
+                And, finally, [1, 2, 3, 4, 5].
+                <br><br>
+                Let’s take a look at Java implementation.
+            </p>
+
+            <script src="https://gist.github.com/OlegKDev/3e94cd6d0e8dd343e44987ccf365724c.js"></script>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
