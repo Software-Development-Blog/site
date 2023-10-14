@@ -4,16 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Software Development Blog</title>
+    <title>SDB</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <nav class="navbar fixed-top navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">Software Development Blog</a>
+            <a class="navbar-brand me-5" href="./index.html">Software Development Blog</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,45 +24,27 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Technical Interview</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./index.html">Java</a></li>
-                            <li><a class="dropdown-item" href="./interview/spring.html">Spring</a></li>
-                            <li><a class="dropdown-item" href="./interview/sql.html">SQL</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Java</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./pages/spring.html">Spring</a>
+                    </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Algorithms</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./algorithms/insertion-sort.html">Insertion Sort</a></li>
-                            <li><a class="dropdown-item" href="./algorithms/selection-sort.html">Selection Sort</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./pages/sql.html">SQL</a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Data Structures</a>
+                            aria-expanded="false">CS</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./data-structures/linked-list.html">Linked List</a></li>
+                            <li><a class="dropdown-item" href="./cs/insertion-sort.html">Insertion Sort</a></li>
+                            <li><a class="dropdown-item" href="./cs/selection-sort.html">Selection Sort</a></li>
                         </ul>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Examples</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./examples/spotless.html">Spotless Plugin</a></li>
-                        </ul>
-                    </li>
-
                 </ul>
-
             </div>
         </div>
     </nav>
@@ -71,7 +54,8 @@
 
         <div class="text-params">
             <h5>What is the Difference between an Overloading and an Overriding?</h5>
-            <p class="answer-params">Method overloading is a form of static, or compile-time, polymorphism. It allows you to
+            <p class="answer-params">Method overloading is a form of static, or compile-time, polymorphism. It allows
+                you to
                 change method
                 logic, list of arguments and return type, but remain the same method name. Access modifiers for
                 overloaded methods can be the same, more restrictive or less restrictive.
@@ -82,7 +66,8 @@
             </p>
 
             <h5>What is the Difference between a Heap and a Stack Memory?</h5>
-            <p class="answer-params">Heap is used for dynamic objects with unpredictable lifetyme. Heap memory is generally
+            <p class="answer-params">Heap is used for dynamic objects with unpredictable lifetyme. Heap memory is
+                generally
                 larger than stack
                 memory. Access to a heap memory is slower. Heap memory is typically shared among all threads.
                 <br><br>
@@ -99,7 +84,8 @@
                 representations of the integers.</p>
 
             <h5>What is the Difference between a Shallow and a Deep Copy?</h5>
-            <p class="answer-params">Shallow copy is a separate entity that references the nested objects contained by the
+            <p class="answer-params">Shallow copy is a separate entity that references the nested objects contained by
+                the
                 original object. Changes made to the nested objects may affect original contained objects. Typically
                 shallow copy is created using a copy constructor or “clone” method. Copy constructor takes an instance
                 of a class as its argument, and creates a new instance with the same state.
@@ -107,12 +93,14 @@
                 original object.</p>
 
             <h5>What is a Garbage Collector and How Does It Work?</h5>
-            <p class="answer-params">GC is a component of the JVM responsible for automatic memory management. Short-time objects
+            <p class="answer-params">GC is a component of the JVM responsible for automatic memory management.
+                Short-time objects
                 (which quickly become unreachable) are more likely to be removed by GB. While long-lived objects have
                 less probability to be removed.</p>
 
             <h5>What is the Difference Between a Constructor and a Method?</h5>
-            <p class="answer-params">Constructors are used to initialize objects when they are created. Constructors must have
+            <p class="answer-params">Constructors are used to initialize objects when they are created. Constructors
+                must have
                 the same name as their class. Constructors are called automatically when you create an instance by a
                 “new” keyword, while methods are called by “.” dot operator. Constructor don’t have a return type while
                 methods have (even void). Constructors and methods can be overloaded, and can have different access
