@@ -3,8 +3,10 @@ body {
 }
 
 .container-params {
+	width: 80%;
+	margin: auto;
 	margin-top: 7rem;
-	width: 75%;
+
 }
 
 .header-params {
@@ -18,3 +20,65 @@ body {
 .answer-params {
 	margin-bottom: 3rem;
 }
+
+.card-custom-color {
+	background-color: rgb(33, 37, 41, .01);
+}
+
+.card-custom-width {
+	width: 70%;
+}
+
+.card-custom-margin {
+	margin-bottom: 2rem;
+}
+
+/* Styles for screen size range [0;300] */
+@media screen and (max-width: 300px) {
+	.container-params {
+		width: 90%;
+	}
+
+	.text-params {
+		width: 100%;
+	}
+
+	.card-custom-width {
+		width: 100%;
+	}
+  }
+  
+  /* Styles for screen size range (300; 800] */
+  @media screen and (min-width: 301px) and (max-width: 800px) {
+	.container-params {
+		width: 90%;
+	}
+
+	.text-params {
+		width: 100%;
+	}
+
+	.card-custom-width {
+		width: 90%;
+	}
+  }
+
+    /* Styles for screen size range (800; 1200] */
+	@media screen and (min-width: 801px) and (max-width: 1200px) {
+		.container-params {
+			width: 80%;
+		}
+	
+		.text-params {
+			width: 75%;
+		}
+	
+		.card-custom-width {
+			width: 80%;
+		}
+	  }
+  
+  /* Styles for screen size range 1200+ */
+  @media screen and (min-width: 1201px) {
+  }
+  
