@@ -12,8 +12,13 @@
     text-decoration: none;
 }
 
-/* Styles for screen size range [0; 400] */
-@media screen and (max-width: 400px) {
+.logo-custom-size {
+    width: 30px;
+    height: 30px;
+}
+
+/* Styles for screen size range [0; 409] */
+@media screen and (max-width: 409px) {
     .container-custom {
         width: 100%;
     }
@@ -21,16 +26,25 @@
     .card-custom {
         width: 95%;
     }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .logo-custom-size {
+        width: 26px;
+        height: 26px;
+    }
 }
 
-/* Styles for screen size range (400; 800] */
-@media screen and (min-width: 401px) and (max-width: 800px) {
+/* Styles for screen size range (410; 800] */
+@media screen and (min-width: 410px) and (max-width: 800px) {
     .container-custom {
         width: 90%;
     }
 
     .card-custom {
-        width: 80%;
+        width: 90%;
     }
 }
 
