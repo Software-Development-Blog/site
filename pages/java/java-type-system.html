@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JAVA TYPE SYSTEM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style/global.css">
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-md bg-light mb-5" data-bs-theme="light">
+
+        <div class="container-fluid">
+            <!-- Logo -->
+            <router-link to="/" class="navbar-brand me-5">
+                <img src="../assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Software Development Blog
+            </router-link>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Java -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Java</a>
+                    </li>
+
+                    <!-- SQL -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="./sql.html">SQL</a>
+                    </li>
+
+                    <!-- Tools -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="./tools.html">Tools</a>
+                    </li>
+
+                    <!-- Algorithms -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Algorithms</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./algorithms/comparison-table.html">Comparison Table</a></li>
+                            <li><a class="dropdown-item" href="./algorithms/insertion-sort.html">Insertion Sort</a></li>
+                            <li><a class="dropdown-item" href="./algorithms/selection-sort.html">Selection Sort</a></li>
+                            <li><a class="dropdown-item" href="./algorithms/bubble-sort.html">Bubble Sort</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Contact -->
+                <div>
+                    <a href="https://www.linkedin.com/in/olegkdev/" class="me-5"
+                        style="text-decoration: none; color: #343a40;">
+                        Contact
+                        <img src="../assets/linkedin-icon.svg" alt="" width="18" height="18" class="d-inline-block">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container d-flex flex-column align-items-center container-custom">
+        <h3 class="mb-4">TYPE SYSTEM</h3>
+
+        <p class="mb-4">
+            <b>STRONGLY AND WEAKLY TYPED SYSTEMS.</b> There are distinguished strongly and weakly typed programming
+            languages.
+            In strongly typed systems type errors are detected during a compilation process, while in weakly typed
+            systems type
+            errors might not be checked until a run-time. Strongly typed languages enforce explicit type promotion (type
+            casting). Implicit type promotion (type coercion) might be done automatically for narrowing primitive types
+            conversion during operations over those types. In Java type casting can be done by using a target type
+            keyword
+            enclosed in round braces: “int newType = (int) oldType”.
+        </p>
+
+        <h5 class="mb-4">PRIMITIVE DATA TYPES (IMMUTABLE)</h5>
+        <table class="table table-bordered mb-4">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">DATA TYPE</th>
+                    <th scope="col">VALUE TYPE</th>
+                    <th scope="col">BITS</th>
+                    <th scope="col">SIGNED / UNSIGNED</th>
+                    <th scope="col">RANGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>boolean</td>
+                    <td>Logical</td>
+                    <td>1</td>
+                    <td>Unsigned</td>
+                    <td>{0, 1}</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>byte</td>
+                    <td>Whole Numbers</td>
+                    <td>8</td>
+                    <td>Signed</td>
+                    <td>[-128, 127]</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>short</td>
+                    <td>Whole Numbers</td>
+                    <td>16</td>
+                    <td>Signed</td>
+                    <td>[-32,768, 32,767]</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>int</td>
+                    <td>Whole Numbers</td>
+                    <td>32</td>
+                    <td>Signed</td>
+                    <td>[-2^31, 2^31-1]</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>long</td>
+                    <td>Whole Numbers</td>
+                    <td>64</td>
+                    <td>Signed</td>
+                    <td>[-2^63, 2^63-1]</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>float</td>
+                    <td>Decimal Numbers</td>
+                    <td>32</td>
+                    <td>Signed</td>
+                    <td>About 7 decimal places</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>double</td>
+                    <td>Decimal Numbers</td>
+                    <td>64</td>
+                    <td>Signed</td>
+                    <td>About 15 decimal places</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>char</td>
+                    <td>Unicode Characters<br>(U+0000 to U+FFFF)</td>
+                    <td>16</td>
+                    <td>Unsigned</td>
+                    <td>[‘\u0000’, ‘\uFFFF’]<br>[0, 65,535]
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h5 class="mb-4">LITERALS AND DEFAULT VALUES</h5>
+        <table class="table table-bordered mb-4">
+            <thead>
+                <tr>
+                    <th scope="col">DATA TYPE</th>
+                    <th scope="col">LITERALS</th>
+                    <th scope="col">DEFAULT VALUE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>boolean</td>
+                    <td>true, false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>byte</td>
+                    <td>Numeric values</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>short</td>
+                    <td>Numeric values</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>Numeric values</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>long</td>
+                    <td>Numeric values with “L” postfix</td>
+                    <td>0L</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>Numeric values with “F” or “f” postfix</td>
+                    <td>0.0F, 0.0f</td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>Numeric values without postfix</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>Single characters enclosed<br> in single quotes,or numeric values</td>
+                    <td>‘\u0000’</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h5 class="mb-4">AUTOBOXING</h5>
+        <p class="mb-4">
+            Autoboxing implies automatic conversion of primitive data types to their corresponding wrapper classes.
+            Unboxing
+            represents a reverse conversion - from wrapper classes to their corresponding primitive values.
+            Autoboxing is commonly used when working with collections like lists, sets, maps, which require objects
+            instead of
+            primitive types.
+        </p>
+
+        <h5 class="mb-4">COMPOUND DATA TYPES</h5>
+        <p class="mb-5">
+            Compound data types can hold multiple primitive or compound types as a single unit. Compound data types
+            include
+            Arrays, Enums, Collections Framework, Data structures, User-defined data types (classes), and Generics
+            (parameterized types).
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

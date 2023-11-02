@@ -1,0 +1,57 @@
+.container-custom {
+    width: 60%;
+    margin-top: 6rem;
+}
+
+.card-custom {
+    width: 60%;
+}
+
+.link-custom-color {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+/* Styles for screen size range [0; 400] */
+@media screen and (max-width: 400px) {
+    .container-custom {
+        width: 100%;
+    }
+
+    .card-custom {
+        width: 95%;
+    }
+}
+
+/* Styles for screen size range (400; 800] */
+@media screen and (min-width: 401px) and (max-width: 800px) {
+    .container-custom {
+        width: 90%;
+    }
+
+    .card-custom {
+        width: 80%;
+    }
+}
+
+/* Styles for screen size range (800; 1200] */
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+    .container-custom {
+        width: 80%;
+    }
+
+    .card-custom {
+        width: 70%;
+    }
+}
+
+/* Styles for screen size range 1200+ */
+@media screen and (min-width: 1201px) {
+    .container-custom {
+        width: 60%;
+    }
+
+    .card-custom {
+        width: 60%;
+    }
+}

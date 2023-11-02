@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JAVA COMPILATION</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style/global.css">
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-md bg-light mb-5" data-bs-theme="light">
+
+        <div class="container-fluid">
+            <!-- Logo -->
+            <router-link to="/" class="navbar-brand me-5">
+                <img src="../assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Software Development Blog
+            </router-link>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Java -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Java</a>
+                    </li>
+
+                    <!-- SQL -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="./sql.html">SQL</a>
+                    </li>
+
+                    <!-- Tools -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="./tools.html">Tools</a>
+                    </li>
+
+                    <!-- Algorithms -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Algorithms</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./algorithms/comparison-table.html">Comparison Table</a></li>
+                            <li><a class="dropdown-item" href="./algorithms/insertion-sort.html">Insertion Sort</a></li>
+                            <li><a class="dropdown-item" href="./algorithms/selection-sort.html">Selection Sort</a></li>
+                            <li><a class="dropdown-item" href="./algorithms/bubble-sort.html">Bubble Sort</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Contact -->
+                <div>
+                    <a href="https://www.linkedin.com/in/olegkdev/" class="me-5"
+                        style="text-decoration: none; color: #343a40;">
+                        Contact
+                        <img src="../assets/linkedin-icon.svg" alt="" width="18" height="18" class="d-inline-block">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container d-flex flex-column align-items-center container-custom">
+        <h3 class="mb-4">COMPILATION AND EXECUTION</h3>
+
+        <p class="mb-4">
+            The Java platform includes Java programming language, Standard Java APIs, Java Development Kit (JDK), Java
+            Virtual
+            Machine (JVM), Java Runtime Environment (JRE). <br><br>
+
+            <b>CODE.</b> Java is a high-level object-oriented programming language known for its simplicity and
+            readability.
+            <br><br>
+            <b>LIBRARIES.</b> Standard Java APIs support performing common tasks such as I/O operations, networking,
+            database
+            connectivity, and more.
+            <br><br>
+            <b>COMPILATION AND DEBUG.</b> Java Development Kit (JDK) is a set of tools, libraries and documentation that
+            enable
+            developers to create Java applications. It includes compiler, debugger, and other utilities necessary for
+            software
+            development.
+            <br><br>
+            <b>RUN.</b> Java Runtime Environment (JRE) is a subset of JDK, containing only JVM and run-time libraries.
+            Users
+            need JRE
+            to run Java applications on their machines.
+            Java Virtual Machine (JVM) is a crucial part of the Java platform. It’s responsible for executing Java byte
+            code,
+            which is an intermediate representation of the Java source code. The JVM interprets or compiles this byte
+            code into
+            machine code, allowing Java applications to run on various hardware and operating systems without
+            modification.
+        </p>
+
+        <h5 class="mb-4">EXECUTION MEMORY MODEL</h5>
+        <p class="mb-4">
+            Run-time data areas are (1) Program Counter Register, (2) JVM Stacks, (3) Heap, (4) Method Area, (5)
+            Run-Time
+            Constant Pool, (6) Native Method Stacks.
+            <br><br>
+            <b>PROGRAM COUNTER REGISTER.</b> JVM can support many threads of execution at once. Each JVM thread has its
+            own PC
+            Register. At any point, each JVM thread is executing the code of a single method, namely the current method
+            of that
+            thread. If that method is not a native, then PC Register contains an address of the JVM instructions
+            currently being
+            executed. If the method being currently executed is native, the value of PC Register is undefined.
+            <br><br>
+            <b>JVM STACKS.</b> Each JVM thread has a private JVM Stack, created at the same time as a thread. JVM stack
+            stores
+            frames.
+            A frame is used to store data and partial results, return values for methods, and dispatch exceptions. A new
+            frame
+            is created each time a method is invoked. A frame is destroyed when its method invocation completes, whether
+            its
+            completion is normal or abrupt (it throws an uncaught exception). Each frame has its own array of local
+            variables,
+            its own operand stack, and a reference to the run-time constant pool of the class of the current method.
+            <br><br>
+            <b>HEAP.</b> Heap is shared among all JVM threads and stores class instances and arrays. Heap storage for
+            objects is
+            reclaimed by Garbage Collector. Short-time objects, which quickly become unreachable, are more likely to be
+            removed
+            by Garbage Collector. While long-lived objects have less probability to be removed.
+            <br><br>
+            <b>METHOD AREA.</b> JVM loads classes from the classpath into Method Area, which is shared among all JVM
+            threads.
+            Method
+            Areais stores class-related information and metadata. In particular, Method Area stores static variables and
+            a
+            run-time constant pool.
+            <br><br>
+            <b>RUN-TIME CONSTANT POOL.</b> A per-class or per-instance run-time representation of the “contant_pool”
+            table in a
+            “class”
+            file. Each run-time contact pool is allocated from the JVM Method Area.
+            <br><br>
+            <b>NATIVE METHOD STACKS.</b> Designed to support methods written in a language other than Java.
+        </p>
+
+        <h5 class="mb-4">BACKWARD COMPATIBILITY</h5>
+        <p class="mb-5">
+            Backward compatibility aims to ensure that changes (e.g., a new version of a programming language, a
+            library, or an
+            API) do not break existing software which relies on the older version. This concept implies source, binary,
+            and
+            behavioral compatibility.
+            <br><br>
+            <b>SOURCE COMPATIBILITY.</b>
+            Source compatibility refers to an ability to compile Java source code written with
+            older
+            syntax by a newer compiler without changes in code. For instance, code written with Java 8 can be compiled
+            by JDK 11
+            and run with JRE 11. To specify compiler options there are “-source [source JDK version]” and “-target
+            [target JDK
+            version]” flags: [source JDK version] &lt;= [target JDK version].
+            <br><br>
+            <b>BINARY COMPATIBILITY.</b>
+            Binary compatibility refers to an ability to run bytecode already compiled by older JDK
+            - with a newer JRE without changes in bytecode. For
+            instance, bytecode compiled with JDK 8 will be run on JRE 11. Another example where an application and its
+            component (or dependency library) were compiled by JDK 8. Now, the component (or dependency library) is
+            updated
+            to Java 11. Due to binary compatibility, it is still possible to run on JRE 11 - previously compiled Java 8
+            application’s bytecode with a new version of the component (or dependency library) compiled by Java 11. In
+            the
+            context of binary compatibility it’s important to mention default interface methods, which were introduced
+            in
+            Java 8. They allow to modify interfaces without a need to change a code which implements those interfaces
+            and,
+            correspondingly, no need to recompile the old code. At the same time, newly written code can use new
+            interface
+            functionality.
+            <br><br>
+            <b>BEHAVIORAL COMPATIBILITY.</b> Behavioral compatibility pertains to the consistency of the software
+            behavior when transitioning between versions. It ensures that functionality remains the same, i.e., an input
+            produces the same output. Other aspects of the behavioral compatibility are consistent user experience,
+            integration compatibility, security, errors handling, data compatibility, performance, etc.
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

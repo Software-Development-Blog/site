@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GIT INTELLIJ IDEA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../style/global.css">
+</head>
+
+<body id="body">
+
+    <nav class="navbar fixed-top navbar-expand-md bg-light mb-5" data-bs-theme="light">
+
+        <div class="container-fluid">
+            <!-- Logo -->
+            <router-link to="/" class="navbar-brand me-5">
+                <img src="../../assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Software Development Blog
+            </router-link>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Java -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="../../index.html">Java</a>
+                    </li>
+
+                    <!-- SQL -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="../sql.html">SQL</a>
+                    </li>
+
+                    <!-- Tools -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="./tools.html">Tools</a>
+                    </li>
+
+                    <!-- Algorithms -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Algorithms</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../algorithms/comparison-table.html">Comparison Table</a></li>
+                            <li><a class="dropdown-item" href="../algorithms/insertion-sort.html">Insertion Sort</a></li>
+                            <li><a class="dropdown-item" href="../algorithms/selection-sort.html">Selection Sort</a></li>
+                            <li><a class="dropdown-item" href="../algorithms/bubble-sort.html">Bubble Sort</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Contact -->
+                <div>
+                    <a href="https://www.linkedin.com/in/olegkdev/" class="me-5"
+                        style="text-decoration: none; color: #343a40;">
+                        Contact
+                        <img src="../../assets/linkedin-icon.svg" alt="" width="18" height="18" class="d-inline-block">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="container" class="container d-flex flex-column align-items-center container-custom">
+        <h3 class="mb-4">GIT FLOW IN INTELLIJ IDEA</h3>
+
+        <!-- Outline -->
+        <p class="mb-4" id="outline">
+            <a href="#clone-repository-shift" class="link-custom-color">Create and Clone Repository</a><br>
+            <a href="#create-issue-and-branch-shift" class="link-custom-color">Create Issue and Branch</a><br>
+            <a href="#write-code-shift" class="link-custom-color">Write Code</a><br>
+            <a href="#imitate-changes-shift" class="link-custom-color">Imitate Changes Made by Another Developer</a><br>
+            <a href="#commit-code-shift" class="link-custom-color">Commit Changes</a><br>
+            <a href="#create-pull-request-1-shift" class="link-custom-color">Create Pull Request and Observe Merge
+                Conflict</a><br>
+            <a href="#merge-shift" class="link-custom-color">Merge Updates from Main Branch to Your Feature Branch.
+                Resolve Merge Conflict</a><br>
+            <a href="#create-pull-request-2-shift" class="link-custom-color">Create New Pull Request</a><br>
+            <a href="#finish-work-shift" class="link-custom-color">Finish Work in Intellij IDEA</a>
+            <span id="clone-repository-shift"></span>
+            <br><br>
+        </p>
+
+        <!-- Clone Repository -->
+        <h5 class="mb-4" id="clone-repository">CREATE AND CLONE REPOSITORY</h5>
+
+        <p class="mb-4">
+            Create an empty GitHub repository “git-demo” with a demo file “file2.txt”:
+            <br><br>
+            <code>
+                This is an<br>
+                initial content.
+            </code>
+        </p>
+        <img src="./images-intellij-idea/1.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Clone your repository to your local machine and open the repository in Intellij IDEA.
+        </p>
+        <img src="./images-intellij-idea/2.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>Ensure that “main” branch is selected (at bottom right corner).</p>
+        <img src="./images-intellij-idea/3.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Get updates from the “main” branch by Git > Update Project (similar to a circle with arrows in VS Code).
+        </p>
+        <img src="./images-intellij-idea/4.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <img src="./images-intellij-idea/5.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Now, “main” branch is updated, we can see “file2.txt”.
+        </p>
+        <img src="./images-intellij-idea/6.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <a href="#container" class="link-custom-color">Outline</a>
+        <span id="create-issue-and-branch-shift"></span>
+        <br><br><br>
+
+        <!-- Create Issue and Branch -->
+        <h5 class="mb-4" id="create-issue-and-branch">CREATE ISSUE AND BRANCH</h5>
+        <p>
+            Assume there is an issue to work on. Go to the “Issues” tab to create a new issue: “My Task”.
+        </p>
+        <img src="./images-intellij-idea/7.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            In this case the issue has a new number #3. Next, create a new local branch “feature/3-My-Task”. Press on
+            the “main” branch in the bottom right
+            corner and select “origin/main” > New Branch from ‘origin/main’.
+        </p>
+        <img src="./images-intellij-idea/8.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Type your branch name and press Create.
+        </p>
+        <img src="./images-intellij-idea/9.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            In the bottom right corner you will see that you are on your new branch.
+        </p>
+        <img src="./images-intellij-idea/10.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <a href="#container" class="link-custom-color">Outline</a>
+        <span id="write-code-shift"></span>
+        <br><br><br>
+
+        <!-- Write Code -->
+        <h5 class="mb-4" id="write-code">WRITE CODE</h5>
+        <p>
+            Write your code.
+        </p>
+        <img src="./images-intellij-idea/11.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <a href="#container" class="link-custom-color">Outline</a>
+        <span id="imitate-changes-shift"></span>
+        <br><br><br>
+
+        <!-- Imitate Changes Made by Another Developer -->
+        <h5 class="mb-4" id="imitate-changes">IMITATE CHANGES MADE BY ANOTHER DEVELOPER</h5>
+        <p>
+            Assume that another developer worked on their branch and pushed changes to
+            the “main” branch. Let’s imitate this situation. Go to the GitHub repository and edit “file2.txt” directly
+            in the “main” branch.
+        </p>
+        <img src="./images-intellij-idea/12.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <a href="#container" class="link-custom-color">Outline</a>
+        <span id="commit-code-shift"></span>
+        <br><br><br>
+
+        <!-- Commit Your Code -->
+        <h5 class="mb-4" id="commit-code">COMMIT CHANGES</h5>
+        <p>
+            Note, that your code was written on lines 4 and 5. And now these lines are occupied by another code
+            (what is known as a “Git conflict”). Return back to Intellij IDEA. Assume you don’t know about these
+            changes. Simply commit your new branch
+            with your changes.
+        </p>
+        <img src="./images-intellij-idea/13.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <a href="#container" class="link-custom-color">Outline</a>
+        <span id="create-pull-request-1-shift"></span>
+        <br><br><br>
+
+        <!-- Create Pull Request and Note Merge Conflict -->
+        <h5 class="mb-4" id="create-pull-request-1">CREATE PULL REQUEST AND OBSERVE MERGE CONFLICT</h5>
+        <p>
+            Go to the GitHub repository, you will see a popup “Compare & pull request”.
+        </p>
+        <img src="./images-intellij-idea/14.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            There is a message that GitHub “Can’t automatically merge” our “feature/3-My-Task” branch
+            into the “main” branch.
+        </p>
+        <img src="./images-intellij-idea/15.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            The reason behind this is that you created your branch from a “main” branch state, which is not
+            relevant any more (now it is in the “past”, since another developer updated “main” branch).
+            To resolve this, it's required firstly to update “feature/3-My-Task” branch, and after this push our
+            commits. When another developer was working on their task, perhaps they didn’t know about our work on our
+            branch. And
+            that’s why new code from the “main” branch may affect the same files and lines of code that we worked on.
+            Synchronization of these changes is known as “Git conflict resolving”.
+        </p>
+        <a href="#container" class="link-custom-color">Outline</a>
+        <span id="merge-shift"></span>
+        <br><br><br>
+
+        <!-- Merge Updates from Main Branch to Your Feature Branch. Resolve Merge Conflict -->
+        <h5 class="mb-4" id="merge">MERGE UPDATES FROM MAIN BRANCH TO YOUR FEATURE BRANCH.<br>RESOLVE MERGE CONFLICT
+        </h5>
+        <p>
+            Return back to Intellij IDEA. Checkout to the “origin/main” branch (in the bottom left corner).
+        </p>
+        <img src="./images-intellij-idea/16.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            There is an initial state of the “main” branch.
+        </p>
+        <img src="./images-intellij-idea/17.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Get updates from the “main” branch by Git > Update Project (similar to a circle with arrows in VS Code).
+        </p>
+        <img src="./images-intellij-idea/18.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <img src="./images-intellij-idea/5.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Now, we have an updated state of the “main” branch including changes made by another developer.
+        </p>
+        <img src="./images-intellij-idea/19.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            However, there is still no connection between these updates and our branch “feature/3-My-Task”. To fix
+            this we need to merge the “origin/main” branch to “feature/3-My-Task”. Checkout to
+            “origin/feature/3-My-Task”.
+        </p>
+        <img src="./images-intellij-idea/20.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Then, go to Git > Merge.
+        </p>
+        <img src="./images-intellij-idea/21.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            And select a branch to merge from. A branch to merge from is “origin/main” (it will be merged with its
+            updates into “feature/3-My-Task”).
+        </p>
+        <img src="./images-intellij-idea/22.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <img src="./images-intellij-idea/23.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            As we expected, there is a Git merge conflict.
+        </p>
+        <img src="./images-intellij-idea/24.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Double click on “file2.txt” to open a merge resolution window. There are three columns: (1) our code,
+            (2) final result of our code, and (3) updates from the “main” branch. Similar to VS Code, there are “Accept
+            Left”, “Accept Right”, and “Apply” buttons.
+        </p>
+        <img src="./images-intellij-idea/25.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Let’s use helpers to accept all changes from the “main” branch.
+        </p>
+        <img src="./images-intellij-idea/26.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <img src="./images-intellij-idea/27.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Similarly, let’s use helpers to accept all changes from our code.
+        </p>
+        <img src="./images-intellij-idea/28.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <img src="./images-intellij-idea/29.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            However, it might be not what we want. So, we can type what we need in the Result section directly.
+        </p>
+        <img src="./images-intellij-idea/30.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <p>
+            Click on an “Apply” button. Git conflict is resolved. Now we can commit our code (including changes merged
+            from the “main” branch).
+            In contrast to VS Code, Intellij IDEA doesn’t show changes to commit and push in this situation.
+        </p>
+        <img src="./images-intellij-idea/31.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Open a “Git” and select a “Push” option.
+        </p>
+        <img src="./images-intellij-idea/32.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Click the “Push” button.
+        </p>
+        <img src="./images-intellij-idea/33.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <a href="#container" class="link-custom-color">Outline</a>
+        <span id="create-pull-request-2-shift"></span>
+        <br><br><br>
+
+        <!-- Create New Pull Request -->
+        <h5 id="create-pull-request-2">CREATE NEW PULL REQUEST</h5>
+        <p>
+            Return back to a GitHub repository. Click “Compare & pull request”.
+        </p>
+        <img src="./images-intellij-idea/34.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Now, we can see that GitHub is able to merge the “feature/3-My-Task” branch into the “main” branch.
+        </p>
+        <img src="./images-intellij-idea/35.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Click “Create pull request”. Then “Merge pull request” or “Squash and merge” (if you don’t know what to
+            choose, then choose “Merge pull request”).
+        </p>
+        <img src="./images-intellij-idea/36.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Now, “file2.txt” in the “main” branch looks exactly as we defined during merge conflict resolution.
+        </p>
+        <img src="./images-intellij-idea/37.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <a href="#container" class="link-custom-color">Outline</a>
+        <sapn id="finish-work-shift"></sapn>
+        <br><br><br>
+
+        <!-- Finish Work in VS Code -->
+        <h5 class="mb-4" id="finish-work">FINISH WORK IN INTELLIJ IDEA</h5>
+        <p>
+            Return back to Intellij IDEA. Ensure that you are on your “feature/3-My-Task” branch. Since your work is
+            completed, checkout to the “origin/main” branch.
+        </p>
+        <img src="./images-intellij-idea/38.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            As we can see, “file2.txt” has code before merging.
+        </p>
+        <img src="./images-vscode/39.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Get updates from the “main” branch by Git > Update Project (similar to a circle with arrows in VS Code).
+        </p>
+        <img src="./images-intellij-idea/18.png" class="img-fluid img-thumbnail" alt="..."><br>
+        <img src="./images-intellij-idea/5.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <p>
+            Now, we have a current state of the “main” branch on our local machine.
+        </p>
+        <img src="./images-intellij-idea/40.png" class="img-fluid img-thumbnail" alt="..."><br>
+
+        <a href="#container" class="link-custom-color">Outline</a>
+        <br><br><br>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
