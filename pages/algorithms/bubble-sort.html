@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Selection Sort</title>
+    <title>Bubble Sort</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
@@ -79,27 +79,41 @@
 
     <div class="container d-flex flex-column align-items-center container-custom">
 
-        <h3 class="mb-4">SELECTION SORT</h3>
+        <h3 class="mb-4">BUBBLE SORT</h3>
 
         <p class="mb-4">
-            Selection sort is a sorting algorithm with a complexity of O(n^2). <br><br>
+            Insertion Sort is a sorting algorithm with a complexity of O(n^2). <br><br>
 
-            Idea of the algorithm is that we take a given array, select its minimum element and place it in the first
-            position. So the most left subarray with one element (which we found as a minimum one) is already sorted.
-            Next we take a given array from its next (second) element to the end, find a minimum element, and place it
-            on the second position. So, now we have a subarray of two elements which are sorted. We continue in a
-            similar manner until all elements are sorted. <br><br>
+            Idea of the algorithm is that within sorting actions we move a maximum element from a given array to the
+            most right position - a maximum element “pops up” like buble. Then we look through remaining elements
+            (except already sorted) and within sorting actions move the maximum to the place before the previous maximum
+            element (on a pre-last position). We repeat these operations until all elements will be placed on their
+            positions. Sorting action is an operation of comparing two adjacent elements and, if they are not ordered, -
+            swapping them. <br><br>
 
-            Let’s see an example. Given a sequence 5, 4, 3, 2, 1. 1 is a minimum element and we place it on the first
-            position instead of the value of 5 (and value of 5 is now placed on the place of value 1): [1], 4, 3, 2, 5.
-            So, subarray [1] is already sorted. Next minimum element is a value of 2. So, we place it on a second
-            position instead of the value of 4, and the value of 4 (second position) is placed on the place of value 2:
-            [1, 2], 3, 4, 5. Next minimum element is a value of 3. There is no need to replace it with other elements:
-            [1, 2, 3], 4, 5. Similarly [1, 2, 3, 4], 5. And, finally, [1, 2, 3, 4, 5]. <br><br>
+            Let’s see an example. Given a sequence 5, 4, 3, 2, 1. Maximum element is 5, and we have to move it on the
+            most right position by comparing and swapping all the elements starting from the first one: <br>
+            4, 5, 3, 2, 1 <br>
+            4, 3, 5, 2, 1 <br>
+            4, 3, 2, 5, 1 <br>
+            4, 3, 2, 1, [5] <br><br>
+
+            Now, [5] is a sorted subarray. We continue compare and swap unordered elements: <br>
+            3, 4, 2, 1, [5] <br>
+            3, 2, 4, 1, [5] <br>
+            3, 2, 1, [4, 5] <br><br>
+
+            Continue in similar manner: <br>
+            2, 3, 1, [4, 5] <br>
+            2, 1, [3, 4, 5] <br><br>
+
+            Finally: <br>
+            1, [2, 3, 4, 5] and [1, 2, 3, 4, 5] <br><br>
         </p>
 
-        <script src="https://gist.github.com/OlegKDev/c9d7572b45c252069a7feb4ff63205df.js"></script>
+        <script src="https://gist.github.com/OlegKDev/74ef9553bfe8144ccf6d4c40e3bf8554.js"></script>
         <br><br>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
