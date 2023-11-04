@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../style/global.css">
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg bg-light mb-5" data-bs-theme="light">
+
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a href="../../index.html" class="navbar-brand me-5">
+                <img src="../../assets/logo.png" alt="Logo" class="d-inline-block align-text-top logo-custom-size">
+                Software Development Blog
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Java -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="../../index.html">Java</a>
+                    </li>
+
+                    <!-- SQL -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="./sql.html">SQL</a>
+                    </li>
+
+                    <!-- Tools -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="../tools/tools.html">Tools</a>
+                    </li>
+
+                    <!-- Algorithms -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" data-bs-auto-close="true">Algorithms</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../algorithms/comparison-table.html">Comparison Table</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/insertion-sort.html">Insertion Sort</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/selection-sort.html">Selection Sort</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/bubble-sort.html">Bubble Sort</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Contact -->
+                <div>
+                    <a href="https://www.linkedin.com/in/olegkdev/" class="me-5"
+                        style="text-decoration: none; color: #343a40;">
+                        Contact
+                        <img src="../../assets/linkedin-icon.svg" alt="" width="18" height="18" class="d-inline-block">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container d-flex flex-column align-items-center container-custom">
+
+        <h3 class="mb-4">TRANSACTIONS</h3>
+        <p class="mb-4">
+            Transaction is a sequence of one or more database operations treated as a single unit. Transactions share
+            ACID properties - Atomicity, Consistency, Isolation, and Durability. <br><br>
+
+            <b>ATOMICITY.</b> Guarantees that a transaction is treated as a single, indivisible unit of work. Either all
+            the
+            changes within a transaction are committed to the database, or, if any part of the transaction fails, the
+            entire transaction is rolled back to its previous state. <br><br>
+
+            <b>CONSISTENCY.</b> Ensures that a transaction brings the database from one consistent state to another, it
+            maintains the validity and integrity of data. <br><br>
+
+            <b>ISOLATION.</b> Ensures that multiple transactions can occur concurrently without interfering with each
+            other. <br><br>
+
+            <b>DURABILITY.</b> Guarantees that once a transaction is committed, its changes are permanent.
+        </p>
+
+        <h5 class="mb-4">DATA ANOMALIES</h5>
+        <p class="mb-4">
+            <b>DIRTY READ.</b> Occurs when a transaction reads uncommitted changes made by another transaction that are
+            later
+            rolled back. <br><br>
+
+            <b>NON-REPEATABLE READ.</b> Occurs when a transaction re-reads data and obtains different results due to
+            other
+            committed transactions modifying the data. <br><br>
+
+            <b>PHANTOM READ.</b> Occurs when a transaction re-executes a query and obtains different rows due to other
+            committed transactions inserting or deleting the rows. <br><br>
+
+            <b>SERIALIZATION ANOMALY.</b> Occurs when concurrent transactions, individually correct in isolation,
+            produce
+            incorrect results when executed together. It violates the isolation principle.
+        </p>
+
+        <h5 class="mb-4">TRANSACTION ISOLATION LEVELS</h5>
+        <p class="mb-4">
+            Transaction Isolation levels are Read Uncommitted, Read Committed, Repeatable Read, Serializable. Following
+            table describes PostgreSQL transaction isolation levels.
+        </p>
+
+        <table class="table table-bordered mb-4">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Dirty Read</th>
+                    <th scope="col">Non-Repeatable Read</th>
+                    <th scope="col">Phantom Read</th>
+                    <th scope="col">Serialization Anomaly</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Read Uncommitted</td>
+                    <td>Allowed, but not in PG</td>
+                    <td>Possible</td>
+                    <td>Possible</td>
+                    <td>Possible</td>
+                </tr>
+                <tr>
+                    <td>Read Committed</td>
+                    <td>Not possible</td>
+                    <td>Possible</td>
+                    <td>Possible</td>
+                    <td>Possible</td>
+                </tr>
+                <tr>
+                    <td>Repeatable Read</td>
+                    <td>Not possible</td>
+                    <td>Not possible</td>
+                    <td>Allowed, but not in PG</td>
+                    <td>Possible</td>
+                </tr>
+                <tr>
+                    <td>Serializable</td>
+                    <td>Not possible</td>
+                    <td>Not possible</td>
+                    <td>Not possible</td>
+                    <td>Not possible</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="https://www.postgresql.org/docs/current/transaction-iso.html"
+            target="_blank">https://www.postgresql.org/docs/current/transaction-iso.html</a>
+
+            <br><br>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

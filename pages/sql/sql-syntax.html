@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../style/global.css">
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg bg-light mb-5" data-bs-theme="light">
+
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a href="../../index.html" class="navbar-brand me-5">
+                <img src="../../assets/logo.png" alt="Logo" class="d-inline-block align-text-top logo-custom-size">
+                Software Development Blog
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Java -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="../../index.html">Java</a>
+                    </li>
+
+                    <!-- SQL -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="./sql.html">SQL</a>
+                    </li>
+
+                    <!-- Tools -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="../tools/tools.html">Tools</a>
+                    </li>
+
+                    <!-- Algorithms -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" data-bs-auto-close="true">Algorithms</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../algorithms/comparison-table.html">Comparison Table</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/insertion-sort.html">Insertion Sort</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/selection-sort.html">Selection Sort</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/bubble-sort.html">Bubble Sort</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Contact -->
+                <div>
+                    <a href="https://www.linkedin.com/in/olegkdev/" class="me-5"
+                        style="text-decoration: none; color: #343a40;">
+                        Contact
+                        <img src="../../assets/linkedin-icon.svg" alt="" width="18" height="18" class="d-inline-block">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container d-flex flex-column align-items-center container-custom">
+
+        <h3 class="mb-4">SQL SYNTAX</h3>
+        <p class="mb-4">
+            <b>DATA TYPES.</b> Boolean, Int, Bigint, Decimal, Float, Varchar, Text, Date, Time, Timestamp, Blob.
+            <br><br>
+
+            <b>CONSTRAINTS.</b> Unique, Primary Key, Foreign Key (Many-to-One). <br><br>
+
+            <b>DATA DEFINITION LANGUAGE (DDL).</b> Create Table, Alter Table, Drop Table, Create Index, Drop Index.
+            <br><br>
+
+            <b>DATA QUERY LANGUAGE (DQL).</b> Select, Union, Intersect, Difference, Inner Join, Outer Join (Left Join,
+            Right
+            Join).
+        </p>
+        <br>
+
+        <img src="./images/join.png" class="img-fluid img-thumbnail" alt=""> <br><br>
+
+        <p class="mb-4">
+            <b>DATA MANIPULATION LANGUAGE (DML).</b> Insert, Update, Delete. <br><br>
+
+            <b>DATA CONTROL LANGUAGE (DCL).</b> Grant, Revoke. <br><br>
+
+            <b>TRANSACTION CONTROL LANGUAGE (TCL).</b> Commit, Rollback.
+        </p>
+
+        <p class="mb-4">
+            <b>DQL EXAMPLE</b> <br>
+
+            <code>
+                SELECT column1, column2<br>
+                FROM table_name<br>
+                WHERE condition<br>
+                ORDER BY column1 ASC, column2 DESC<br>
+                LIMIT 10;<br>
+            </code><br>
+            Suppose there are two tables, employees and departments. To retrieve a list of employees along with their
+            associated department information: <br><br>
+
+            <code>
+                SELECT employees.employee_id, employees.employee_name, departments.department_name <br>
+                FROM employees <br>
+                INNER JOIN departments ON employees.department_id = departments.department_id; <br>
+            </code><br>
+
+            To retrieve a list of all employees, including those who may not be assigned to any department: <br><br>
+
+            <code>
+                SELECT employees.employee_id, employees.employee_name, departments.department_name <br>
+                FROM employees <br>
+                LEFT JOIN departments ON employees.department_id = departments.department_id; <br>
+            </code> <br>
+
+            In this query, the LEFT JOIN returns all rows from the employees table and the matching rows from the
+            departments table. If there is no matching department for an employee, the department_name will be NULL. <br>
+
+            To retrieve a list of all departments, including those without any employees, use a RIGHT JOIN: <br><br>
+
+            <code>
+                SELECT employees.employee_id, employees.employee_name, departments.department_name <br>
+                FROM employees <br>
+                RIGHT JOIN departments ON employees.department_id = departments.department_id; <br>
+            </code> <br>
+
+            In this query, the RIGHT JOIN returns all rows from the departments table and the matching rows from the
+            employees table. If there are departments without any assigned employees, the employee_id and employee_name
+            will be NULL for those rows. <br><br>
+
+
+            <b>DML EXAMPLE</b> <br>
+
+            <code>
+                INSERT INTO employees (employee_id, employee_name, department_id) <br>
+                VALUES (1, 'John Smith', 101); <br> <br>
+    
+                UPDATE employees <br>
+                SET department_id = 102 <br>
+                WHERE employee_id = 1; <br> <br>
+    
+                DELETE FROM employees <br>
+                WHERE employee_id = 3; <br>
+            </code> <br>
+
+            <b>INDEXES.</b> Indexes are commonly used on columns that are frequently used in WHERE clauses for filtering, JOIN
+            operations, and ORDER BY clauses for sorting. <br><br>
+
+            <code>
+                CREATE INDEX index_name ON table_name (column1, column2); <br><br>
+
+                ALTER TABLE table_name <br>
+                RENAME INDEX old_index_name TO new_index_name; <br> <br>
+    
+                DROP INDEX index_name ON table_name; <br>
+            </code>
+        </p>
+        <br><br>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
