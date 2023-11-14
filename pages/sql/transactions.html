@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SQL</title>
+    <title>Database Transactions</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
@@ -77,46 +77,46 @@
         </div>
     </nav>
 
-    <div class="container d-flex flex-column align-items-center container-custom">
+    <div class="container d-flex flex-column align-items-start container-custom">
 
-        <h3 class="mb-4">TRANSACTIONS</h3>
-        <p class="mb-4">
+        <h3 class="mb-4">Database Transactions</h3>
+        <p class="mb-5">
             Transaction is a sequence of one or more database operations treated as a single unit. Transactions share
             ACID properties - Atomicity, Consistency, Isolation, and Durability. <br><br>
 
-            <b>ATOMICITY.</b> Guarantees that a transaction is treated as a single, indivisible unit of work. Either all
+            <b>Atomicity.</b> Guarantees that a transaction is treated as a single, indivisible unit of work. Either all
             the
             changes within a transaction are committed to the database, or, if any part of the transaction fails, the
             entire transaction is rolled back to its previous state. <br><br>
 
-            <b>CONSISTENCY.</b> Ensures that a transaction brings the database from one consistent state to another, it
+            <b>Consistency.</b> Ensures that a transaction brings the database from one consistent state to another, it
             maintains the validity and integrity of data. <br><br>
 
-            <b>ISOLATION.</b> Ensures that multiple transactions can occur concurrently without interfering with each
+            <b>Isolation.</b> Ensures that multiple transactions can occur concurrently without interfering with each
             other. <br><br>
 
-            <b>DURABILITY.</b> Guarantees that once a transaction is committed, its changes are permanent.
+            <b>Durability.</b> Guarantees that once a transaction is committed, its changes are permanent.
         </p>
 
-        <h5 class="mb-4">DATA ANOMALIES</h5>
-        <p class="mb-4">
-            <b>DIRTY READ.</b> Occurs when a transaction reads uncommitted changes made by another transaction that are
+        <h5 class="mb-4">Data Anomalies</h5>
+        <p class="mb-5">
+            <b>Dirty Read.</b> Occurs when a transaction reads uncommitted changes made by another transaction that are
             later
             rolled back. <br><br>
 
-            <b>NON-REPEATABLE READ.</b> Occurs when a transaction re-reads data and obtains different results due to
+            <b>Non-Repeatable Read.</b> Occurs when a transaction re-reads data and obtains different results due to
             other
             committed transactions modifying the data. <br><br>
 
-            <b>PHANTOM READ.</b> Occurs when a transaction re-executes a query and obtains different rows due to other
+            <b>Phantom Read.</b> Occurs when a transaction re-executes a query and obtains different rows due to other
             committed transactions inserting or deleting the rows. <br><br>
 
-            <b>SERIALIZATION ANOMALY.</b> Occurs when concurrent transactions, individually correct in isolation,
+            <b>Serialization Anomaly.</b> Occurs when concurrent transactions, individually correct in isolation,
             produce
             incorrect results when executed together. It violates the isolation principle.
         </p>
 
-        <h5 class="mb-4">TRANSACTION ISOLATION LEVELS</h5>
+        <h5 class="mb-4">Transaction Isolation Levels</h5>
         <p class="mb-4">
             Transaction Isolation levels are Read Uncommitted, Read Committed, Repeatable Read, Serializable. Following
             table describes PostgreSQL transaction isolation levels.
