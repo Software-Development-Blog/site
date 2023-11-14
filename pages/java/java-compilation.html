@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JAVA COMPILATION</title>
+    <title>Java Compilation and Execution</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
@@ -18,7 +18,8 @@
         <div class="container-fluid">
             <!-- Logo -->
             <a href="../../index.html" class="navbar-brand me-5">
-                <img src="../../assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="../../assets/logo.png" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
                 Software Development Blog
             </a>
 
@@ -52,9 +53,12 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" data-bs-auto-close="true">Algorithms</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../algorithms/comparison-table.html">Comparison Table</a></li>
-                            <li><a class="dropdown-item" href="../algorithms/insertion-sort.html">Insertion Sort</a></li>
-                            <li><a class="dropdown-item" href="../algorithms/selection-sort.html">Selection Sort</a></li>
+                            <li><a class="dropdown-item" href="../algorithms/comparison-table.html">Comparison Table</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/insertion-sort.html">Insertion Sort</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/selection-sort.html">Selection Sort</a>
+                            </li>
                             <li><a class="dropdown-item" href="../algorithms/bubble-sort.html">Bubble Sort</a></li>
                         </ul>
                     </li>
@@ -74,28 +78,28 @@
         </div>
     </nav>
 
-    <div class="container d-flex flex-column align-items-center container-custom">
-        <h3 class="mb-4">COMPILATION AND EXECUTION</h3>
+    <div class="container d-flex flex-column align-items-start container-custom">
+        <h3 class="mb-4 ">Compilation and Execution</h3>
 
         <p class="mb-4">
             The Java platform includes Java programming language, Standard Java APIs, Java Development Kit (JDK), Java
             Virtual
             Machine (JVM), Java Runtime Environment (JRE). <br><br>
 
-            <b>CODE.</b> Java is a high-level object-oriented programming language known for its simplicity and
+            <b>Write Code.</b> Java is a high-level object-oriented programming language known for its simplicity and
             readability.
             <br><br>
-            <b>LIBRARIES.</b> Standard Java APIs support performing common tasks such as I/O operations, networking,
+            <b>Use Libraries.</b> Standard Java APIs support performing common tasks such as I/O operations, networking,
             database
             connectivity, and more.
             <br><br>
-            <b>COMPILATION AND DEBUG.</b> Java Development Kit (JDK) is a set of tools, libraries and documentation that
+            <b>Compile and Debug.</b> Java Development Kit (JDK) is a set of tools, libraries and documentation that
             enable
             developers to create Java applications. It includes compiler, debugger, and other utilities necessary for
             software
             development.
             <br><br>
-            <b>RUN.</b> Java Runtime Environment (JRE) is a subset of JDK, containing only JVM and run-time libraries.
+            <b>Run.</b> Java Runtime Environment (JRE) is a subset of JDK, containing only JVM and run-time libraries.
             Users
             need JRE
             to run Java applications on their machines.
@@ -107,61 +111,71 @@
             modification.
         </p>
 
-        <h5 class="mb-4">EXECUTION MEMORY MODEL</h5>
+        <h6 class="mb-2">Related Interview Questions</h6>
+        <p class="mb-5">
+            What is a Java platform? What are the parts of the Java platform? <br>
+            What are JDK, JRE, JVM?<br>
+        </p>
+
+        <h5 class="mb-4">Execution Memory Model</h5>
         <p class="mb-4">
             Run-time data areas are (1) Program Counter Register, (2) JVM Stacks, (3) Heap, (4) Method Area, (5)
             Run-Time
             Constant Pool, (6) Native Method Stacks.
             <br><br>
-            <b>PROGRAM COUNTER REGISTER.</b> JVM can support many threads of execution at once. Each JVM thread has its
-            own PC
-            Register. At any point, each JVM thread is executing the code of a single method, namely the current method
-            of that
-            thread. If that method is not a native, then PC Register contains an address of the JVM instructions
-            currently being
-            executed. If the method being currently executed is native, the value of PC Register is undefined.
+            <b>Program Counter Register.</b> JVM can support many threads of execution at once. Each JVM thread has its
+            own PC Register. At any point, each JVM thread is executing the code of a single method, namely the current method
+            of that thread. If that method is not a native, then PC Register contains an address of the JVM instructions
+            currently being executed. If the method being currently executed is native, the value of PC Register is undefined.
             <br><br>
-            <b>JVM STACKS.</b> Each JVM thread has a private JVM Stack, created at the same time as a thread. JVM stack
-            stores
-            frames.
-            A frame is used to store data and partial results, return values for methods, and dispatch exceptions. A new
-            frame
-            is created each time a method is invoked. A frame is destroyed when its method invocation completes, whether
-            its
-            completion is normal or abrupt (it throws an uncaught exception). Each frame has its own array of local
+            <b>JVM Stacks.</b> Each JVM thread has a private JVM Stack, created at the same time as a thread. JVM stack
+            stores frames. A frame is used to store data and partial results, return values for methods, and dispatch exceptions. A new
+            frame is created each time a method is invoked. A frame is destroyed when its method invocation completes, whether
+            its completion is normal or abrupt (it throws an uncaught exception). Each frame has its own array of local
             variables,
             its own operand stack, and a reference to the run-time constant pool of the class of the current method.
             <br><br>
-            <b>HEAP.</b> Heap is shared among all JVM threads and stores class instances and arrays. Heap storage for
+            <b>Heap.</b> Heap is shared among all JVM threads and stores class instances and arrays. Heap storage for
             objects is
             reclaimed by Garbage Collector. Short-time objects, which quickly become unreachable, are more likely to be
             removed
             by Garbage Collector. While long-lived objects have less probability to be removed.
             <br><br>
-            <b>METHOD AREA.</b> JVM loads classes from the classpath into Method Area, which is shared among all JVM
+            <b>Method Area.</b> JVM loads classes from the classpath into Method Area, which is shared among all JVM
             threads.
             Method
-            Areais stores class-related information and metadata. In particular, Method Area stores static variables and
+            Area stores class-related information and metadata. In particular, Method Area stores static variables and
             a
             run-time constant pool.
             <br><br>
-            <b>RUN-TIME CONSTANT POOL.</b> A per-class or per-instance run-time representation of the “contant_pool”
+            <b>Run-Time Constant Pool.</b> A per-class or per-instance run-time representation of the “contant_pool”
             table in a
             “class”
-            file. Each run-time contact pool is allocated from the JVM Method Area.
+            file. Each run-time constant pool is allocated from the JVM Method Area.
             <br><br>
-            <b>NATIVE METHOD STACKS.</b> Designed to support methods written in a language other than Java.
+            <b>Native Method Stacks.</b> Designed to support methods written in a language other than Java.
         </p>
 
-        <h5 class="mb-4">BACKWARD COMPATIBILITY</h5>
+        <h6 class="mb-2">Related Interview Questions</h6>
         <p class="mb-5">
+            What are areas of Java memory model?<br>
+            What is a program counter register?<br>
+            What are JVM stacks? What are frames?<br>
+            What is a Heap?<br>
+            What is a method area?<br>
+            What is a run-time constant pool?<br>
+            What are the native method stacks?<br>
+        </p>
+
+        <h5 class="mb-4">Backward Compatibility</h5>
+        <p class="mb-4">
             Backward compatibility aims to ensure that changes (e.g., a new version of a programming language, a
             library, or an
             API) do not break existing software which relies on the older version. This concept implies source, binary,
             and
             behavioral compatibility.
             <br><br>
-            <b>SOURCE COMPATIBILITY.</b>
+            <b>Source Compatibility.</b>
             Source compatibility refers to an ability to compile Java source code written with
             older
             syntax by a newer compiler without changes in code. For instance, code written with Java 8 can be compiled
@@ -170,7 +184,7 @@
             [target JDK
             version]” flags: [source JDK version] &lt;= [target JDK version].
             <br><br>
-            <b>BINARY COMPATIBILITY.</b>
+            <b>Binary Compatibility.</b>
             Binary compatibility refers to an ability to run bytecode already compiled by older JDK
             - with a newer JRE without changes in bytecode. For
             instance, bytecode compiled with JDK 8 will be run on JRE 11. Another example where an application and its
@@ -187,10 +201,17 @@
             interface
             functionality.
             <br><br>
-            <b>BEHAVIORAL COMPATIBILITY.</b> Behavioral compatibility pertains to the consistency of the software
+            <b>Behavioral Compatibility.</b> Behavioral compatibility pertains to the consistency of the software
             behavior when transitioning between versions. It ensures that functionality remains the same, i.e., an input
             produces the same output. Other aspects of the behavioral compatibility are consistent user experience,
             integration compatibility, security, errors handling, data compatibility, performance, etc.
+        </p>
+        <h6 class="mb-2">Related Interview Questions</h6>
+        <p class="mb-5">
+            What is a backward compatibility?<br>
+            What is a source backward compatibility?<br>
+            What is a binary backward compatibility?<br>
+            What is a behavioral backward compatibility?<br>
         </p>
     </div>
 
