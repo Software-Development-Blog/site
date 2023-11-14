@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Classes and Objects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../style/global.css">
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-md bg-light mb-5" data-bs-theme="light">
+
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a href="../../index.html" class="navbar-brand me-5">
+                <img src="../../assets/logo.png" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                Software Development Blog
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Java -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="../../index.html">Java</a>
+                    </li>
+
+                    <!-- SQL -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="../sql/sql.html">SQL</a>
+                    </li>
+
+                    <!-- Tools -->
+                    <li class="nav-item me-3">
+                        <a class="nav-link" aria-current="page" href="../tools/tools.html">Tools</a>
+                    </li>
+
+                    <!-- Algorithms -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" data-bs-auto-close="true">Algorithms</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../algorithms/comparison-table.html">Comparison Table</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/insertion-sort.html">Insertion Sort</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/selection-sort.html">Selection Sort</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../algorithms/bubble-sort.html">Bubble Sort</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Contact -->
+                <div>
+                    <a href="https://www.linkedin.com/in/olegkdev/" class="me-5"
+                        style="text-decoration: none; color: #343a40;">
+                        Contact
+                        <img src="../../assets/linkedin-icon.svg" alt="" width="18" height="18" class="d-inline-block">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container d-flex flex-column align-items-start container-custom">
+        <h3 class="mb-4 ">Classes and Objects</h3>
+        <p class="mb-5">
+            <em><b>Objects (Instances) of Regular Non-Static Classes.</b></em> Regular (non-static) classes are loaded
+            and stored in the
+            Method Area, just like static classes. However, instances (objects) of regular classes are stored in the
+            Heap. <br><br>
+
+            <em><b>Static Classes.</b></em> If a class is declared with a “static” keyword, the class itself will still
+            be loaded and
+            stored in the Method Area, similar to regular classes. However, it is not possible to instantiate a static
+            class, or use it as a type for variables or methods parameters.
+            Using static classes is not a common practice in Java. An alternative is a Singleton pattern which ensures
+            that there is only one instance of a class.
+        </p>
+
+        <h5 class="mb-4">Object Lifecycle</h5>
+        <p class="mb-5">
+            Key lifecycle stages are creation, initialization, utilization, garbage collection, and
+            finalization.<br><br>
+
+            <em><b>Creation.</b></em> Constructor allocates a new memory in the Heap when the “new” keyword is
+            called.<br><br>
+
+            <em><b>Initialization.</b></em> After an object is created, a constructor initializes its fields.<br><br>
+
+            <em><b>Utilization.</b></em> An object can interact with other objects and perform its intended
+            tasks.<br><br>
+
+            <em><b>Garbage Collection.</b></em> When there are no more references to the object, it becomes eligible for
+            garbage
+            collection.<br><br>
+
+            <em><b>Finalization.</b></em> Before an object is destroyed, its “finalize()” method (if defined) is called.
+            However, this
+            method is not recommended for recourse management, and it has been deprecated since Java 9. As an
+            alternative to using “finalize(), it’s recommended to manage resources explicitly, such as closing file or
+            releasing resources with “try-with-resources” block, using “try-catch-finally” blocks, or implementing
+            “AutoCloseable” interface for custom classes that manage resources.
+        </p>
+
+        <h5 class="mb-4">“Object” Methods</h5>
+        <p class="mb-5">
+            Classes in Java are inherited from a root class called “java.lang.Object”, and therefore all instances share
+            Object’s methods.<br><br>
+
+            <em><b>equals(Object obj).</b></em> This method is used to compare two objects for equality. It returns
+            “true” if objects
+            are equals, and “false” otherwise. By default, “equals()” compares object references, but it can be
+            overridden in custom classes to provide a custom equality logic.<br><br>
+
+            <em><b>hashCode().</b></em> This method returns a hash code value for an object. Hash codes are used in the
+            hash-based data
+            structures like HashMap and HashSet. For consistency, if two objects are equal according to the “equal()”
+            method, they should have the same hash code.<br><br>
+
+            <em><b>toString().</b></em> This method returns a string representation of an object. It is often used for
+            debugging and
+            logging purposes. By default, it returns a class name, followed by the object’s hash code. But it can be
+            overridden to provide a custom string representation.<br><br>
+
+            <em><b>getClass().</b></em> This method returns a run-time class of the object as an instance of the “Class”
+            class. It can
+            be used to determine a class type of an object at runtime.<br><br>
+
+            <em><b>clone().</b></em> This method is used to make a shallow copy of the current object. To provide a
+            proper clone
+            operation it’s required to implement a “Cloneable” interface, and the “clone()” method should be
+            overridden.<br><br>
+
+            <em><b>wait(), notify(), notifyAll().</b></em> These methods are used for inter-thread communication and
+            synchronization.
+            <br><br>
+            <em><b>finalize().</b></em> Deprecated since Java 9. This method is called before an object is destroyed by
+            a Garbage
+            Collector.
+        </p>
+
+        <h5 class="mb-4">Variables</h5>
+        <p class="mb-5">
+            <em><b>Class Instance Variables.</b></em> Each instance (object) of the class has its own separate copy of
+            instance
+            variables, which are allocated in the Heap. Changes to one instance’s variables do not affect the variables
+            of other instances. Instance variables are used to store data specific to each instance of the class, making
+            them unique for each object. To access an instance variable it is required to specify instance name, dot
+            operator, and a variable name.<br><br>
+
+            <em><b>Class Static Variables.</b></em> Class variables are declared using the “static” keyword, these
+            variables are stored
+            in the Method Area. They are associated with class itself rather than with instances of the class. There is
+            only one copy of a class variable for the entire class, shared among all instances of the class. A class
+            variable can be accessed through class name, dot operator, and class variable name; or through instance
+            name, dot operator, and class variable name. However, it’s recommended to use the class name approach for
+            clarity.<br><br>
+
+            <em><b>Primitive Variables.</b></em> Primitive variables hold the actual values (such as integers or
+            characters).
+            <br><br>
+            <em><b>Reference Variables.</b></em> In Java, a reference variable is a variable to store a memory address
+            (reference) of an
+            object rather than the actual data of the object itself.<br><br>
+
+            <em><b>“this” Keyword.</b></em> “this” keyword is a reference variable that is used to refer to the current
+            object within an
+            instance method or constructor.<br><br>
+
+            <em><b>Local (Block-Level) Variables.</b></em> Local or block-level variables are declared within a specific
+            block of code,
+            and their scope is limited to that block. Local variables are stored in Method Stack, and exist once the
+            block exists. Local variables must be explicitly initialized before they are used.<br><br>
+
+            <em><b>Method Parameters and Arguments.</b></em> Method parameters (formal parameters) are declared in the
+            method signature
+            within parentheses. Method arguments (actual parameters) are the values that are passed to the method when
+            it is called.
+            In Java, method parameters are always passed by value. This means, when a variable is passed as a method
+            parameter, it is passing a copy of the value stored in that variable, not a reference to the original
+            variable or object. Primitive data types are passed by value since they contain the actual data. For
+            objects, even though object references are passed as method parameters, the reference itself is still passed
+            by value. The reference is copied, but both the original reference and the copied reference still point to
+            the same object in memory.
+        </p>
+
+        <h5 class="mb-4">Compare Two Objects</h5>
+        <p class="mb-5">
+            <em><b>“==” Operator.</b></em> If applied to the primitive data types, it returns “true” when values of two
+            variables are
+            equal, and “false” otherwise. In case of objects, it compares object memory references for equality, but
+            doesn’t take into account objects’ content. <br><br>
+
+            <em><b>"equals" Method.</b></em> By default, “equals” compares object references, but it can be overridden
+            in custom
+            classes to provide a custom equality logic. If the “equals” method is used to compare two instances of
+            primitive data type wrappers (like “Integer”, “Double, etc.), it behaves in the same way as with other
+            objects - checks for equality of the memory references.
+            <br><br>
+            <code>
+                Integer a = 10;<br>
+                Integer b = 10;<br>
+                a.equals(b) // true
+            </code>
+            <br><br>
+            The result of the code above is “true” because “a” and “b” have the same memory references.<br><br>
+
+            <em><b>“Comparable” Interface.</b></em> To implement a “Comparable” interface it’s required to override its
+            “public int
+            compareTo(Object obj)” method.
+            <br><br>
+            <code>
+                obj1.compareTo(obj2);
+            </code>
+            <br><br>
+
+            <em><b>“Comparator” Interface.</b></em> To implement a “Comparator” interface it’s required to override its
+            “int
+            compare(Object obj1, Object obj2)” method. Method calculates “value1 - value2” and returns zero if values
+            are the same, negative number if the first one is less than a second, and a positive number if the first one
+            is greater than the second one.<br>
+
+            Alternative is using Comparator’s static “comparing” method:
+            <br><br>
+            <code>
+                Comparator<MyClass> valueComparator = Comparator.comparing(MyClass::getValue);<br>
+                int result = valueComparator.compare(obj1, obj2);
+            </code>
+            <br><br>
+
+            <em><b>“Compare” Method of Primitive Wrappers.</b></em> Integer.compare(int a, int, b), Long.compare(long a,
+            long b),
+            and so on.
+        </p>
+
+        <h5 class="mb-4">Copy Object</h5>
+        <p class="mb-5">
+            <em><b>Shallow Copy.</b></em> A shallow copy of an object duplicates the object itself and its immediate
+            references, but it doesn’t duplicate the objects referenced by those references. In other words, a shallow
+            copy creates a new object, but the internal references within the copied object still point to the same
+            objects as the original.<br>
+            There are several ways to create a shallow copy in Java:<br>
+            - Using the “Object.clone” method if a class implements the “Cloneable” interface.<br>
+            - Using copy constructors, where a class provides a constructor that takes an instance of the same class as
+            an
+            argument and copies the fields.<br>
+            - Manually creating a new object and copying the fields one by one. <br><br>
+
+            <em><b>Deep Copy.</b></em> A deep copy duplicates an object itself and all the objects referenced by it,
+            recursively. This means that not only the top-level object is duplicated, but all the objects it references
+            are also duplicated, and any objects those objects reference are copied as well. This creates a completely
+            independent copy of the original object and all its referenced objects.<br>
+            Ways of creating a deep copy are:<br>
+            - Using serialization and deserialization: Serialize the original object in a byte array and then
+            deserialize
+            it to create a new deep copy. This approach requires the objects and their members to be serializable.<br>
+            - Manually create a new object and recursively copy all the objects referenced by the original
+            object.<br><br>
+
+            <em><b>Defensive Copy.</b></em> Defensive copy is an object’s duplicate, which is used instead of an
+            original object, when there is a need of passing the original object as an argument to a method, or
+            returning this object from a method.
+        </p>
+
+        <h5 class="mb-4">Object Serialization </h5>
+        <p class="mb-5">
+            <em><b>Serialization.</b></em> Serialization is a process of converting an object’s state (fields) into a
+            byte stream, which can be then saved to a file, sent over a network, or stored in a database. In Java to
+            make an object serializable it’s required to implement a “java.io.Serializable” marker interface. If a field
+            is indicated as “transient”, then it will be excluded during a serialization process.
+            <br><br>
+            <em><b>Deserialization.</b></em> Deserialization is a process of reconstructing an object from a serialized
+            byte stream. This allows us to recreate an object with the same state as the original.
+        </p>
+
+        <h5 class="mb-4">Object Immutability</h5>
+        <p class="mb-4">
+            Immutability is a property of an object that, once created, cannot be modified. Immutable objects share such
+            benefits as:<br>
+            - Predictability since a state of the object is never changed.<br>
+            - Caching - immutable objects can be cashed safely.<br>
+            - Security - immutable objects can be shared without concerns on unauthorized modifications.<br>
+            - Thread safety - multiple threads can access an immutable object simultaneously without the risk of data
+            corruption, race conditions, or the need of explicit synchronization.<br>
+            - Immutability is one of the requirements to use an object as a key for HashMap data structure.<br><br>
+
+            Requirements for a creation of an immutable class in Java.<br>
+            - Declare a class “final”. This prevents a class from being inherited, which could potentially introduce
+            immutability.<br>
+            - Declare fields as “private” and “final”. Fields should be private to encapsulate an object’s state, and
+            final to ensure they can only be set once, typically in the constructor.<br>
+            - Provide no mutator methods, which allow changing the internal state of the object after construction.
+            - Provide getter methods for read-only access.<br>
+            - Ensure defensive copying. If a class contains mutable objects as fields, then create and return
+            independent
+            copies of these objects in getter methods to avoid unintentional modifications.<br>
+        </p>
+
+        <em><b></b></em>
+        <h6 class="mb-2">Related Interview Questions</h6>
+        <p class="mb-5">
+            What are regular and static classes in Java?<br>
+            What are phases of an object lifecycle?<br>
+            What are variables in Java?<br>
+            What are method parameters and arguments?<br>
+            What are ways to compare two objects in Java?<br>
+            What are ways to copy an object in Java?<br>
+            What is serialization?<br>
+            What is immutability?
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
